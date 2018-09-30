@@ -1,0 +1,22 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Network model.}}{11}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Block diagram for the basic elements of the fuzzy-end to end delay.}}{12}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Generalized fuzzy system.}}{13}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Fuzzy linguistic representation of bandwidth.}}{14}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Fuzzy linguistic representation of arrival rate.}}{14}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Fuzzy linguistic representation of mobile speed.}}{15}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Fuzzy linguistic representation of number of intermediate nodes.}}{15}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Fuzzy linguistic representation of end to end delay.}}{16}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Rule base generation in MATLAB.}}{17}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Average end to end delay.}}{22}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Minimum end to end delay.}}{23}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Maximum end to end delay.}}{23}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Surface view of bandwidth, intermediate nodes and end to end delay.}}{24}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Surface view of arrival rate, intermediate nodes and end to end delay.}}{24}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Surface view of mobile speed, intermediate nodes and end to end delay.}}{25}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Surface view of bandwidth, arrival rate and end to end delay.}}{25}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Surface view of mobile speed, arrival rate and end to end delay.}}{26}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Surface view of mobile speed, bandwidth and end to end delay.}}{26}
+\addvspace {10\p@ }
