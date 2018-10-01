@@ -15,6 +15,7 @@
 %\usefont{T1}{tnr}{m}{sl}
 \makeatletter
 \makeatother
+\pagenumbering{roman}
 \renewcommand{\contentsname}{TABLE OF CONTENTS}
 \renewcommand\listtablename{LIST OF TABLES}
 \renewcommand\listfigurename{LIST OF FIGURES}
@@ -30,7 +31,7 @@
 \input{titlepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{page}{1}
-\pagenumbering{roman}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{declaration}
 \input{abs}
@@ -41,8 +42,10 @@
 \addcontentsline{toc}{chapter}{LIST OF FIGURES}
 \listoffigures
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \input{abbr}
 \input{notations}
+\mainmatter
 \input{ch1}
 \input{ch2}
 \input{ch3}
@@ -50,6 +53,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcitestyle{numbers}
 \addcontentsline{toc}{chapter}{REFERENCES}
+\nocite{*}
 \bibliographystyle{kluwer}
 \bibliography{ref}
 \end{document}

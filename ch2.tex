@@ -1,30 +1,39 @@
 \chapter{DESIGN DETAILS AND IMPLEMENTATION}
-To implement a low cost IoT application which can be help full for industrial application. The components we have used or the for our objective and major requirements are explained in this part.Implementation of the objective and software and hardware requirement are taken an overview in this  chapter
+To implement a low cost IoT application which can be help full for industrial application. The components we have used for our objective and major requirements are explained in this part.Implementation of the objective, software and hardware requirement are taken as an overview in this chapter.
 
 \section{REQUIREMENT ANALYSIS}
 \subsection {Software Requirements}
-Arduino IDE ,python IDE, Raspbien OS 
+Arduino IDE ,python IDE, Raspbien OS. 
  \subsection{Hardware Requirements}
-Ultrasonic sensor, sound sensor, two Arduino boards, raspberry pi, breadboard, connecting wires, two Bluetooth modules.  
+Ultrasonic sensor, sound sensor, vibration sensor, smoke sensor, humidity and temperature sensor, two Arduino boards, raspberry pi, breadboard, connecting wires, two Bluetooth modules and wifi module.  
 
 
 
 \section{Component details}
-Major components that are involved in achieving our objective are as below ;
-\subsection{Sound sensor }  which has a working voltage: Dc 4 ~ 6v has the signal output instructions single signal and responds output. Effective signal output for low level. Output low level and signal light will on when there has voice.
-\subsection{Ultrasonic sensor} - supply voltage- 5 v, global current consumption –15 A, ultrasonic frequency -40k Hz, maximal range -400 cm, minimal range-minimal range- 3 cm, resolution -1 cm, trigger pulse width -10 μs , outline dimension- 43x20x15 mm
-\subsection{Arduino}  board is our main component in which our codes are uploaded for development of project. Its specification include; Digital I/O Pins: 14 (of which 6 provide PWM output), Analog I/O Pins, Flash Memory: 32 KB (AT mega328P) of which 0.5 KB used by boot loader. SRAM: 2 KB (AT mega328P)
-\subsection{Bluetooth Module} is our major component which works in sending and receiving some data which we get from the sound sensor which includes specifications as Power Supply: +3.3V DC 50mA Frequency: 2.4GHz ISM band, Bluetooth Protocol: Bluetooth specification v2.0+EDR, Wireless, module Bluetooth, transceiver PCB
-\subsection{Raspberry pi} mini CPU is used in our project mainly to reduce the costs of expenses of our projects it is installed with its own raspbien operating system and includes all components of CPU but with some less capabilities .major part of this raspberry pi helps as an intermediate part to send the data into cloud
+Major components that are involved in achieving our objective are as below;
+\subsection{Sound sensor }  Working voltage: Dc 4 ~ 6v has the signal output instructions single signal and responds output. Effective signal output for low level. 
+
+\subsection{Ultrasonic sensor} Supply voltage- 5 v, global current consumption -15 A, ultrasonic frequency -40k Hz, maximal range -400 cm, minimal range-minimal range- 3 cm, resolution -1 cm, trigger pulse width -10 us , outline dimension- 43x20x15 mm.
+
 \subsection{SM-420 Vibration sensor }
-he vibration sensor consists of a potentiometer and three pins.   They are Vcc pin,ground pin and D0 pin.  The potentiometer is used for adjusting sensitivity threshold selection.  The Vcc pin is connected to the+5 volts of the Arduino board, the ground pin is connected to the ground of the Arduino board and D0 pin is connected to the digital pin 12 of the Arduino board. The sensor is powered with+5 volts
+Supply- voltage 3.3 to 5 v, On-board LED indicator to show the results, switch default state is close, On-board LM393 chip. 
+
 \subsection{MQ-2 Smoke sensor }
-he smoke sensor consists of a potentiometer and three pins. They are Vcc pin, ground pin,  signal  pin.   As  smoke  sensor  can  detect  a  wide  range  of  gases  like  hydrogen,propane,  butane,  LPG,  alcohol. The potentiometer  is  adjusted  according  to  the  requirement.  The Vcc pin is connected+5 volts of the Arduino board, the ground pin is connected the ground of the Arduino board and the signal pin is connected to the analog pin 5 of the Arduino board. The sensor is powered by+5 volts
+Operating voltage is +5 v, the voltage of analog output is 0-5 v and the voltage of digital output is 0-5 v. Preheat duration will be 20 seconds. It can be used as analog and digital sensor.
+
 \subsection{ Humidity and temperature sensor }
-Humidity and temperature sensor consists of three pins mounted on a small PCB whichincludes a surface mounted 10K Ohm pull up resistor for the signal line.  The threepins are Vcc pin which is connected to the+5 volts of the Arduino board, ground pinis connected to the ground of the Arduino board and the data signal pin to the digitalpin 6 of the Arduino board.
+Supply voltage is +5 v, temperature range 0-50 degrees with error of + or - 2 degrees, humidity 20-90% , relative humidity + or - 5% RH error. It is digitally interfaced.
+
+\subsection{Arduino}  Arduino board is our main component in which our codes are uploaded for development of project. Its specification include; Digital I/O Pins: 14 (of which 6 provide PWM output), Analog I/O Pins, Flash Memory: 32 KB (AT mega328P) of which 0.5 KB used by boot loader. SRAM: 2 KB (AT mega328P).
+
+\subsection{Bluetooth Module} Bluetooth Module is our major component which works in sending and receiving some data which we get from the sensors which includes specifications as Power Supply: +3.3V DC 50mA Frequency: 2.4GHz ISM band, Bluetooth Protocol: Bluetooth specification v2.0+EDR, Wireless, module Bluetooth, transceiver PCB.
+
+\subsection{Raspberry pi} Mini CPU is used in our project mainly to reduce the costs of expenses of our projects it is installed with its own raspbien operating system and includes all components of CPU but with some less capabilities. Major part of this raspberry pi helps as an intermediate part to send the data into cloud.
+
 \section{Design architecture}
-The ultrasonic sensor has 4 pins. They are Vcc pin, ground pin, trigger pin, echo pin. The Vcc pin is connected to 5.5v pin of the Arduino board, the ground pin is connected to ground pin of the Arduino board, the trigger pin is connected to the digital pin of number 4 and the echo pin is connected to the digital pin of number 5.
-The sound sensor has 3 pins. They are analog pin, Vcc pin and ground pin. The analog pin is connected to the analog pin of number 0, the Vcc pin is connected to 3.3v pin of the Arduino board and the ground pin is connected to ground pin of the Arduino board.
+The ultrasonic sensor has 4 pins. They are Vcc pin, ground pin, trigger pin, echo pin. The Vcc pin is connected to +5v pin of the Arduino board, the ground pin is connected to ground pin of the Arduino board, the trigger pin is connected to the digital pin of number 4 and the echo pin is connected to the digital pin of number 5.
+The sound sensor has 3 pins. They are analog pin, Vcc pin and ground pin. The analog pin is connected to the analog pin of number 0, the Vcc pin is connected to +5v pin of the Arduino board and the ground pin is connected to ground pin of the Arduino board.
+
 The Bluetooth module has 6 pins. They are enable/key pin, Rx pin, TX pin, state pin, Vcc pin, ground pin. The Rx pin is connected to TX pin of Arduino board, the TX pin is connected to the Rx pin of the Arduino board, the Vcc pin is connected to the 5.5v pin of the Arduino board and the ground pin is connected to the ground pin of the Arduino board.
 \begin{figure}[h]
 \centerline{\includegraphics[width=5.7in]{master}}
@@ -34,36 +43,28 @@ The Bluetooth module has 6 pins. They are enable/key pin, Rx pin, TX pin, state 
 \centerline{\includegraphics[width=5.7in]{slave}}
 \caption{slave device architecture.}
 \end{figure}
-\clearpage
 \section{Implementation}
-Our major implementation part begins with the embedding of sensors on the Arduino board and experimenting with them, and the major components are master and slave sensors these are explained below
+Our major implementation part begins with the embedding of sensors on the Arduino board and experimenting with them, and the major components are master and slave devices these are explained below
 \subsection{Master Device}
-The master device consists of one Arduino board, an ultrasonic sensor, a sound sensor, a
-vibration sensor, a humidity and temperature sensor, smoke sensor and a Bluetooth module
-HC-05.
+The master device consists of one Arduino board, an ultrasonic sensor, a sound sensor, a vibration sensor, a humidity and temperature sensor, smoke sensor and a Bluetooth module HC-05.
+
 \begin{figure}[h]
 \centerline{\includegraphics[width=5.7in]{MC}}
 \caption{ Master Circuit Diagram.}
 \end{figure}
 Five sensors and a Bluetooth module is integrated in a single Arduino board for monitoring the health condition of the industrial machines. We can use any set of sensors according to the requirement of the industrial machines. It is basically used to collect the data and transfer to the slave device. The connections in the circuit are as follow.
-\subsection{Ultrasonic sensor}
-The ultrasonic sensor consists of four pins. They are Vcc pin, ground pin, Trigger pin, echo pin.The Vcc pin is connected to 5 volt pin of the Arduino board, the ground pin is connected to the ground pin of the Arduino pin, the Trigger pin is connected to the digital pin 4 of the Arduino
-board and the echo pin is connected to the digital pin 5 of the Arduino board. The sensor is powered by the Vcc pin with +5 volts. The Trigger pin is an Input pin and is set to HIGH with a +5 volt power and it transmits ultrasonic waves. The ultrasonic waves travels straight until it is
-blocked by any object then the waves bounces back. The echo pin is an output pin which goes HIGH a period of time until the waves reach back to the sensor. The distance travelled by the wave before it bounce back after blocked by any object is calculated by using the formula
+\subsubsection{Ultrasonic sensor}
+The ultrasonic sensor consists of four pins. They are Vcc pin, ground pin, Trigger pin, echo pin.The Vcc pin is connected to +5 volt pin of the Arduino board, the ground pin is connected to the ground pin of the Arduino pin, the Trigger pin is connected to the digital pin 4 of the Arduino board and the echo pin is connected to the digital pin 5 of the Arduino board. The sensor is powered by the Vcc pin with +5 volts. The Trigger pin is an Input pin and is set to HIGH with a +5 volt power and it transmits ultrasonic waves. The ultrasonic waves travels straight until it is blocked by any object then the waves bounces back. The echo pin is an output pin which goes HIGH a period of time until the waves reach back to the sensor. The distance travelled by the wave before it bounce back after blocked by any object is calculated by using the formula
 
  Distance (D) =1/2*duration*sonic speed [sonic speed=0.034]
  
  \subsubsection{Sound sensor}
- The sound sensor consists of a microphone and three pins. They are Vcc pin, ground pin and OUT pin. The sound sensor has a potentiometer also for adjusting sensitivity threshold selection. The Vcc pin is connected to the +5 volts of the Arduino board, the ground pin is connected to ground of the Arduino board and OUT pin is connected to the analog pin 1 of the
-Arduino board. The sensor is powered by the Vcc pin with +5 volts. The OUT pin is an Input pin and we set a certain threshold value to the sensor if the sound around the sensor exceeds the threshold value the OUT pin goes to HIGH. The microphone attached to the sensor converts the sound into analog value and you can see the analog value in the serial monitor of the Arduino
+ The sound sensor consists of a microphone and three pins. They are Vcc pin, ground pin and OUT pin. The sound sensor has a potentiometer also for adjusting sensitivity threshold selection. The Vcc pin is connected to the +5 volts of the Arduino board, the ground pin is connected to ground of the Arduino board and OUT pin is connected to the analog pin 1 of the Arduino board. The sensor is powered by the Vcc pin with +5 volts. The OUT pin is an Input pin and we set a certain threshold value to the sensor if the sound around the sensor exceeds the threshold value the OUT pin goes to HIGH. The microphone attached to the sensor converts the sound into analog value and you can see the analog value in the serial monitor of the Arduino
 IDE.
 \subsubsection{SM-420 Vibration sensor}
-The vibration sensor consists of a potentiometer and three pins. They are Vcc pin, ground pin and D0 pin. The potentiometer is used for adjusting sensitivity threshold selection. The Vcc pin is connected to the +5 volts of the Arduino board, the ground pin is connected to the ground of
-the Arduino board and D0 pin is connected to the digital pin 12 of the Arduino board. The sensor is powered with +5 volts. The D0 pin is an input pin when there is vibration the sensor feels the vibration and the D0 pin goes to HIGH, if there is no vibration the D0 pin goes to LOW.
-The threshold value can be set by using the potentiometer.
+The vibration sensor consists of a potentiometer and three pins. They are Vcc pin, ground pin and D0 pin. The potentiometer is used for adjusting sensitivity threshold selection. The Vcc pin is connected to the +5 volts of the Arduino board, the ground pin is connected to the ground of the Arduino board and D0 pin is connected to the digital pin 12 of the Arduino board. The sensor is powered with +5 volts. The D0 pin is an input pin when there is vibration the sensor feels the vibration and the D0 pin goes to HIGH, if there is no vibration the D0 pin goes to LOW. The threshold value can be set by using the potentiometer.
 \subsubsection{MQ-2 Smoke sensor}
-The smoke sensor consists of a potentiometer and three pins. They are Vcc pin, ground pin, signal pin. As smoke sensor can detect a wide range of gases like hydrogen, propane, butane, LPG, alcohol. The potentiometer is adjusted according to the requirement. The Vcc pin is connected +5 volts of the Arduino board, the ground pin is connected the ground of the Arduino board and the signal pin is connected to the analog pin 5 of the Arduino board. The
-sensor is powered by +5 volts. The signal pin is an input pin and its goes to HIGH when the gas is detected and LOW when there is no gas. The output voltage depends upon the concentration of the gases. The higher the concentration higher the output voltage. The lower the concentration lower the output voltage.
+The smoke sensor consists of a potentiometer and three pins. They are Vcc pin, ground pin, signal pin. As smoke sensor can detect a wide range of gases like hydrogen, propane, butane, LPG, alcohol. The potentiometer is adjusted according to the requirement. The Vcc pin is connected +5 volts of the Arduino board, the ground pin is connected the ground of the Arduino board and the signal pin is connected to the analog pin 5 of the Arduino board. The sensor is powered by +5 volts. The signal pin is an input pin and its goes to HIGH when the gas is detected and LOW when there is no gas. The output voltage depends upon the concentration of the gases. The higher the concentration higher the output voltage. The lower the concentration lower the output voltage.
 \subsubsection{Humidity and temperature sensor}
 Humidity and temperature sensor consists of three pins mounted on a small PCB which includes a surface mounted 10K Ohm pull up resistor for the signal line. The three pins are Vcc pin which is connected to the +5 volts of the Arduino board, ground pin is connected to the ground of the Arduino board and the data signal pin to the digital pin 6 of the Arduino board. The sensor has humidity range of 20-90% RH, humidity accuracy of + or -5% RH, temperature range of 0-50 degrees C and temperature accuracy of + or -2 degree C. The
 sensor is powered by +5 volts. The signal data pin is always kept HIGH by a 5 volts power.The sensor detects the relative humidity by the change in the resistance of the two electrodes in the PCB and temperature is detected by the thermistor built in the PCB on the surface of the sensor.
